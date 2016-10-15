@@ -36,7 +36,7 @@ function postTweet(){
 
 		Twitter.post('statuses/update', {status: tweet}, function(error, tweetObj, response){
 			
-			if(error){ console.log(new Date().toString() + " :: Error getting quote: " + error); return; };
+			if(error){ console.log("Error tweeting.."); console.log(error); return; };
 
 			console.log(new Date().toString() + ' :: ID: ' + tweetObj.id + ' //  Tweet: ' + tweetObj.text);
 
