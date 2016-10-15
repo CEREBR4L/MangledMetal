@@ -1,0 +1,41 @@
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #29202b;
+}
+
+.cont{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.img-cont{
+	height: 100px;
+	width: 100px;
+	margin: auto;
+}
+
+.logo{
+	height: 100%;
+	width: 100%;
+	margin: auto;
+}
+
+.text{
+	font-weight: 300;
+	font-family: 'Rubik', sans-serif;
+	font-size: 1.25em;
+	color: #fff;
+	margin: 20px 0;
+}
+
+.link{
+	color: #ee1f7f;
+	text-decoration: none;
+}
+
+.link:hover{
+	opacity: 0.6;
+}
