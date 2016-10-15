@@ -21,7 +21,7 @@ function getQuote(){
 
 	});
 
-	setTimeout(getQuote, 1000 * 60 * 3);
+	setTimeout(getQuote, 1000 * 60 * 60);
 
 }
 
