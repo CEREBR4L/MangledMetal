@@ -46,7 +46,7 @@ function postTweet(){
 
 	});
 
-	setTimeout(postTweet, 1000 * 60 * 1);
+	setTimeout(postTweet, 1000 * 60 * 60);
 
 }
 
