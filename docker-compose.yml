@@ -1,0 +1,21 @@
+version: '1'
+services:
+  server:
+    build: ./Server
+    volumes:
+      - ./myFace:/myFace
+      - ./quotes:/quotes
+    ports:
+      - "8081:8081"
+  tweeter:
+    build: ./Tweeter
+    volumes:
+      - ./quotes:/quotes
+    ports:
+      - "82:82"
+  collector:
+    build: ./Collector
+    volumes:
+      - ./quotes:/quotes
+    ports:
+      - "8083:8083"
