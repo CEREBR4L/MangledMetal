@@ -19,6 +19,8 @@ var secret = {
 	access_token_secret: process.env.API_SECRET_TOKEN
 }
 
+console.log(secret);
+
 var Twitter = new twitter(secret);
 
 function postTweet(){
