@@ -48,17 +48,21 @@ exports.tweet = function(callback){
 
 	quotes.count({isTweeted: false, tooLong: false}).exec(function(err, count){
 		
-		if(err){ console.log('Error counting while trying to get a random quote: ' + err); return; }
+		if(err){ console.log('Error counting while trying to get a random quote: ' + err); return; };
 
 		var number = Math.floor(Math.random() * count);
 
 		quotes.findOne({isTweeted: false, tooLong: false}, function(err, item){
 
+			if(err){ console.log("Error getting random quote: " + err); return; };
+
 			console.log(new Date().toString() + " :: Got data: " + item);
 			callback(item);
 
 		});
+
 	});
+
 }
 
 exports.markTooLong = function(id){
