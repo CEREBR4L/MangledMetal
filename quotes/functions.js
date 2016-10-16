@@ -52,11 +52,12 @@ exports.tweet = function(callback){
 
 		var number = Math.floor(Math.random() * count);
 
-		quotes.findOne({isTweeted: false, tooLong: false}, function(err, item){
+		quotes.findOne({isTweeted: false, tooLong: false}).skip(number).exec(function(err, item){
 
 			if(err){ console.log("Error getting random quote: " + err); return; };
 
 			console.log(new Date().toString() + " :: Got data: " + item);
+			
 			callback(item);
 
 		});
