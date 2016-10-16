@@ -8,7 +8,7 @@ var quotesDB = require('./quotes/functions.js');
        
 /* config */
 var connect = mongoose.connect('mongodb://127.0.0.1:27017/MangledMetal');
-var port = process.env.PORT || 82;
+var port = process.env.PORT || 8082;
 
 env(__dirname + '/.env');
 
@@ -34,6 +34,7 @@ function postTweet(){
 		if(tweet.length > 140){
 			quotesDB.markTooLong(quote._id);
 			postTweet();
+			return;
 		}
 
 		Twitter.post('statuses/update', {status: tweet}, function(error, tweetObj, response){
@@ -48,7 +49,7 @@ function postTweet(){
 
 	});
 
-	setTimeout(postTweet, 1000 * 60 * 30);
+	setTimeout(postTweet, 1000 * 60 * 45);
 
 }
 

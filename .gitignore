@@ -1,4 +1,4 @@
-.env
+.env*
 *.log
 *.sublime*
 node_modules/*
