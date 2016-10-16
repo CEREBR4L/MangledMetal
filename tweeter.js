@@ -8,7 +8,7 @@ var quotesDB = require('./quotes/functions.js');
        
 /* config */
 var connect = mongoose.connect('mongodb://127.0.0.1:27017/MangledMetal');
-var port = process.env.PORT || 8082;
+var port = process.env.PORT || 82;
 
 env(__dirname + '/.env');
 
