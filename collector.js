@@ -27,6 +27,10 @@ function getQuote(){
 
 getQuote();
 
+app.use('*', function(req, res){
+  res.redirect("http://138.68.138.138:8081/");
+});
+
 app.listen(port, function(){
     console.log(new Date().toString() + " :: App running on: " + port);
 });
