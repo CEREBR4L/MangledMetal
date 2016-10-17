@@ -2,18 +2,48 @@ var quotes = require('./model.js');
 
 exports.save = function(quote){
 
-	var data = new quotes({
-		isTweeted: false,
-		tooLong: false,
-		quoteObj: quote
+	quotes.findOne({quoteLink: quote.quoteLink}, function(err, item){
+		
+		if(err){ console.log(new Date().toString() + " :: Error finding quote in DB: " + err); return; };
+
+		if(!item){
+
+			var data = new quotes({
+				isTweeted: false,
+				tooLong: false,
+				quoteText: quote.quoteText,
+				quoteAuthor: quote.quoteAuthor,
+				quoteLink: quote.quoteLink
+			});
+
+			data.save(function(err, data){
+
+				if(err){ console.log(new Date().toString() + " :: Error saving quote to DB: " + err); return; };
+
+				console.log(new Date().toString() + " :: Quote Saved to DB: " + data );
+
+			});
+
+		}
+		else{
+			console.log("Duplicated quote, exiting before creation...");
+			return;
+		}
+
 	});
 
-	data.save(function(err, data){
+}
 
-		if(err){ console.log(new Date().toString() + " :: Error saving quote to DB: " + err); return; };
+exports.removeAll = function(req, res){
 
-		console.log(new Date().toString() + " :: Quote Saved to DB: " + data );
-
+	quotes.remove({}, function(err){
+		if(!err){
+			res.send("Removed.");
+		}
+		else{
+			console.log(err);
+			return;
+		}
 	});
 
 }

@@ -15,7 +15,8 @@ function getQuote(){
 		
 		if(err){ console.log(new Date().toString() + " :: Erroe getting quote: " + err); return; };
 
-		console.log(new Date().toString() + " :: " + quote);
+		console.log(new Date().toString() + " :: ");
+		console.log(quote);
 
 		quotesDB.save(quote);
 
