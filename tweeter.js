@@ -29,7 +29,7 @@ function postTweet(){
 
 		quote = data;
 
-		tweet = quote.quoteObj.quoteText;
+		tweet = quote.quoteText;
 
 		if(tweet.length > 140){
 			quotesDB.markTooLong(quote._id);
