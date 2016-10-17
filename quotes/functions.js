@@ -34,20 +34,6 @@ exports.save = function(quote){
 
 }
 
-exports.removeAll = function(req, res){
-
-	quotes.remove({}, function(err){
-		if(!err){
-			res.send("Removed.");
-		}
-		else{
-			console.log(err);
-			return;
-		}
-	});
-
-}
-
 exports.update = function(quote){
 
 	quotes.findOne({_id: quote}, function(err, item){
