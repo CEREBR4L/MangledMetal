@@ -4,8 +4,9 @@ var mongoose = require('mongoose');
 var twitter = require('twitter');
 var env = require('node-env-file');
 
+var tweetTimer;
 var quotesDB = require('./quotes/functions.js');
-       
+     
 /* config */
 var connect = mongoose.connect('mongodb://127.0.0.1:27017/MangledMetal');
 var port = process.env.PORT || 82;
@@ -33,6 +34,7 @@ function postTweet(){
 
 		if(tweet.length > 140){
 			quotesDB.markTooLong(quote._id);
+			clearTimeout(tweetTimer);
 			postTweet();
 			return;
 		}
@@ -49,7 +51,7 @@ function postTweet(){
 
 	});
 
-	setTimeout(postTweet, 1000 * 60 * 45);
+	tweetTimer = setTimeout(postTweet, 1000 * 60 * 45);
 
 }
 
