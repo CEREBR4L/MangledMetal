@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
+
 	<title>Mangled Metal</title>
-	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+
 </head>
-<body>
-	<div class="cont">
-			
-		<div>
+<body ng-controller="homeController" class="controller">
+	
+	<div ng-view class="view"></div>
 
-			<div class="img-cont">
-				<img src="../img/logo.png" class="logo">
-			</div>
+	<footer class="foot">
+		<a href="https://github.com/CEREBR4L/MangledMetal" class="gh">Check me out on GitHub</a>
+	</footer>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <!-- CUSTOM -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/home.js"></script>
+    <script src="js/factories/getQuotes.js"></script>
 
-			<h1 class="text">
-			Hello, I am a Mangled Metal, I live to <a href="https://twitter.com/MangledMetal_" target="_blank" class="link">tweet beautiful quotes</a>.
-			</h1>
-
-		</div>
-
-	</div>
 </body>
 </html>

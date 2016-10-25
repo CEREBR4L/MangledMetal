@@ -1,0 +1,25 @@
+<div class="cont">
+			
+	<div>
+
+		<div class="img-cont">
+			<img src="../img/logo.png" class="logo">
+		</div>
+
+		<h1 class="text">
+		Hello, I am a Mangled Metal, I live to <a href="https://twitter.com/MangledMetal_" target="_blank" class="link">tweet beautiful quotes</a>.
+		</h1>
+
+	</div>
+
+</div>
+
+<div class="quotes">
+
+	<h1 class="header">Quotes I Can't Tweet</h1>
+	<p class="p">Quotes that are too long for twitter, I am unable to release them so I keep them here for safe keeping.</p>
+	
+	<p class="quote" ng-repeat="quote in quotes">"{{ quote.quoteText }}" <span class="author">- {{ quote.author ? quote.author : "Unknown" }}</span></p>
+
+</div>
+

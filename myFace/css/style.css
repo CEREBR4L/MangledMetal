@@ -23,19 +23,58 @@ body{
 	margin: auto;
 }
 
-.text{
+.text, .quote, .header, .p{
 	font-weight: 300;
 	font-family: 'Rubik', sans-serif;
-	font-size: 1.25em;
-	color: #fff;
-	margin: 20px 0;
 }
 
-.link{
+.text{
+	color: #fff;
+	margin: 20px 0;
+	font-size: 1.25em;
+}
+
+.link, .gh{
 	color: #ee1f7f;
 	text-decoration: none;
 }
 
-.link:hover{
+.link:hover, .gh:hover{
 	opacity: 0.6;
+}
+
+.quotes{
+	background-color: #FCF7F8;
+	padding: 30px 20%;
+}
+
+.header{
+	font-weight: 500;
+	font-size: 2em;
+	color: #29202b;
+	margin: 5px;
+}
+
+.p{
+	font-size: 1em;
+	margin: 0;
+	padding-left: 7px;
+	opacity: .6;
+}
+
+.quote{
+	opacity: 0.7;
+	margin: 40px 0;
+	font-size: 1em;
+}
+
+.author{ color: #ee1f7f; opacity: 1; }
+
+.foot{
+	font-family: 'Rubik', sans-serif;
+	text-align: center;
+	padding: 20px;
+}
+.gh{
+	font-size: .75em;
 }

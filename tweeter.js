@@ -51,7 +51,7 @@ function postTweet(){
 
 	});
 
-	tweetTimer = setTimeout(postTweet, 1000 * 60 * 45);
+	tweetTimer = setTimeout(postTweet, 1000 * 60 * 30);
 
 }
 

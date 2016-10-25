@@ -55,7 +55,23 @@ exports.update = function(quote){
 exports.getAll = function(req, res){
 
 	quotes.find({}).sort({_id: -1}).exec(function(err, items){
+
+		if(err){ console.log("Error getting all quotes: " + err); return; }
+
 		res.json(items);
+	
+	});
+
+}
+
+exports.getTooLong = function(req, res){
+
+	quotes.find({tooLong: true}, function(err, items){
+
+		if(err){ console.log("Error getting long quotes: " + err); return; }
+
+		res.send(items);
+
 	});
 
 }
