@@ -19,7 +19,7 @@
 	<h1 class="header">Quotes I Can't Tweet</h1>
 	<p class="p">Quotes that are too long for twitter, I am unable to release them so I keep them here for safe keeping.</p>
 	
-	<p class="quote" ng-repeat="quote in quotes">"{{ quote.quoteText }}" <span class="author">- {{ quote.author ? quote.author : "Unknown" }}</span></p>
+	<p class="quote" ng-repeat="quote in quotes">"{{ quote.quoteText }}" <span class="author">- {{ quote.quoteAuthor ? quote.quoteAuthor : "Unknown" }}</span></p>
 
 </div>
 
