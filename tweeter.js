@@ -26,15 +26,13 @@ var Twitter = new twitter(secret);
 
 function postTweet(){
 
-	quotesDB.tweet(function(data){
+	quotesDB.tweet(function(quote){
 
-		if(!data){
+		if(!quote || !quote.quoteText){
 			clearTimeout(tweetTimer);
 			postTweet();
 			return;
 		}
-
-		quote = data;
 
 		tweet = quote.quoteText;
 
