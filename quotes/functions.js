@@ -82,7 +82,7 @@ exports.tweet = function(callback){
 		
 		if(err){ console.log('Error counting while trying to get a random quote: ' + err); return; };
 
-		var number = Math.floor(Math.random() * count);
+		var number = Math.floor(Math.random() * (count - 1));
 
 		quotes.findOne({isTweeted: false, tooLong: false}).skip(number).exec(function(err, item){
 

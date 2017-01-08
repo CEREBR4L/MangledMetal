@@ -28,6 +28,12 @@ function postTweet(){
 
 	quotesDB.tweet(function(data){
 
+		if(!data){
+			clearTimeout(tweetTimer);
+			postTweet();
+			return;
+		}
+
 		quote = data;
 
 		tweet = quote.quoteText;
