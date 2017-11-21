@@ -1,10 +1,8 @@
-#Mangled Metal
+# Mangled Metal
 
 A bot that tweets quotes to the world. 
 
-[My face is here](http://138.68.138.138:8081/)
-
-[I tweet here though](https://twitter.com/MangledMetal_)
+[I tweet here](https://twitter.com/MangledMetal_)
 
 ## How do I work? 
 
